@@ -1,13 +1,13 @@
 from random import randint
 
-class Spelare():
+class Spelare:
     def __init__(self, player, points=0):
         self.player_name = player
         self.points = points
 
+
     def kasta(self):
-        result = randint(1, 6)
-        return result
+        return randint(1, 6)
 
     def vinn_runda(self):
         self.points += 1
@@ -15,8 +15,9 @@ class Spelare():
 
 player1 = Spelare(input("Ange namn för spelare 1: "))
 player2 = Spelare(input("Ange namn för spelare 2:"))
+max_poang = int(input("Hur många poäng tills nån har vunnit: "))
 
-while max(player1.points, player2.points) < 5:
+while max(player1.points, player2.points) < max_poang:
 
     result_player1 = player1.kasta()
     result_player2 = player2.kasta()
